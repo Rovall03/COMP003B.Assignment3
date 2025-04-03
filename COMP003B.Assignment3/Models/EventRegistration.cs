@@ -15,6 +15,7 @@ namespace COMP003B.Assignment3.Models
         [Required]
         public string EventCode { get; set; }
         [MaxLength(20)]
+
         public int Tickets { get; set; }
         [Range(1,10)]
 
