@@ -9,10 +9,11 @@
 @model COMP003B.Assignment3.Models.EventRegistration
 <h2>Successful Registration</h2>
 <p>Your registration has been submitted</p>
-<p>@Model.FullName</p>
+
 <p>@Model.FullName</p>
 <P>@Model.Email</P>    
-<P> @Model.EventCode</P>  
+<P>@Model.EventCode</P>  
 <P>@Model.Tickets</P>
-<p>@Model.ReferralCode</p>
 
+<a asp-action="Register">Register for  Another </a>
+<partial name="_EventNav" />

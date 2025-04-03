@@ -6,7 +6,7 @@ namespace COMP003B.Assignment3.Controllers
     [Route("event")]
     public class EventController : Controller
     {
-         [HttpGet("event/register/{eventCode}")]
+         [HttpGet("register/{eventCode}")]
         public IActionResult Register(string eventCode) 
         { 
             return View();
@@ -25,12 +25,12 @@ namespace COMP003B.Assignment3.Controllers
             {
                 return View(registration);
             }
-            return RedirectToAction("Success", registration);
+            return RedirectToAction("Success");
         }
         [Route("success")]
-        public IActionResult Success(EventRegistration registration)
+        public IActionResult Success()
         { 
-        return View(registration);
+        return View();
         }
     }
 }

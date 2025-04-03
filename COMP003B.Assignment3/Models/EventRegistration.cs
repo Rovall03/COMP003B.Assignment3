@@ -6,19 +6,22 @@ namespace COMP003B.Assignment3.Models
     public class EventRegistration : Controller
     {
         [Required]
-        public string FullName { get; set; }
         [MinLength(3)]
+        public string FullName { get; set; }
+       
 
         [Required]
         public string Email { get; set; }
 
-        [Required]
-        public string EventCode { get; set; }
+        [Required] 
         [MaxLength(20)]
+        public string EventCode { get; set; }
+       
 
-        public int Tickets { get; set; }
         [Range(1,10)]
+        public int Tickets { get; set; }
+        
 
-        public string ReferralCode { get; set; }
+      
     }
 }
