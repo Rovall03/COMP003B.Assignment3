@@ -3,34 +3,36 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace COMP003B.Assignment3.Controllers
 {
-    [Route("event")]
+
     public class EventController : Controller
     {
-         [HttpGet("register/{eventCode}")]
-        public IActionResult Register(string eventCode) 
-        { 
+        [HttpGet("event/register/{eventCode}")]
+        public IActionResult Register([FromRoute] string eventCode)
+        {
             return View();
         }
 
-        [HttpGet("register")]
+        [HttpGet]
         public IActionResult Register()
         {
             return View();
         }
 
-        [HttpPost("register")]
-        public IActionResult Register([FromForm] EventRegistration registration)
+        [HttpPost]
+        public IActionResult Register([FromForm] EventRegistration Event)
         {
             if (!ModelState.IsValid)
             {
-                return View(registration);
+                return View(Event);
             }
-            return RedirectToAction("Success");
+            return RedirectToAction("Success", Event);
         }
+
+
         [Route("success")]
-        public IActionResult Success()
-        { 
-        return View();
+        public IActionResult Success(EventRegistration Event)
+        {
+            return View(Event);
         }
     }
 }
